@@ -5,10 +5,13 @@ import pandas
 import scipy
 
 
-def main():
+def greeting(name: str) -> str:
+    print(name + " how are you")
+
+def main() -> None:
 
     print("Hello")
-    print("New line")
+    greeting("Jack")
 
 
 
