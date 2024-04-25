@@ -15,7 +15,7 @@ Y_MULTIPLE = 10.0
 def show_file_list(DATA_FOLDER: str) -> list[str]:
     all_dta_file = [file for file in os.listdir(DATA_FOLDER) if file.endswith(".asc")]
     files_list = [i for i in all_dta_file]  # Show all the dta files there
-    print(files_list)
+    return files_list
 
 FILE_NAME_LIST = [
                 'coverage dependence of o2  ramp4 exp1.asc',
@@ -25,10 +25,10 @@ FILE_NAME_LIST = [
                 ]
 
 LEGEND_LIST = [
-                 'exp1',
-                 'exp2',
-                 'exp2',
-                 'exp3',
+               'exp1',
+               'exp2',
+               'exp2',
+               'exp3',
               ]
 
 HEADER_LINE_HEAD = 'Cycle' + '\t'
@@ -44,8 +44,14 @@ def load_data(file_path: str, header_line_head: str) -> pd.DataFrame:
     return pd.DataFrame(text, columns=header)
 
 
-def plot_spectrum(FILE_NAME_LIST: list[str], LEGEND_LIST: list[str], DATA_FOLDER: str, HEADER_LINE_HEAD: str,
-                  X_NAME: str, Y_NAME: str, Y_MULTIPLE: float) -> None:
+def plot_spectrum(FILE_NAME_LIST: list[str],
+                  LEGEND_LIST: list[str],
+                  DATA_FOLDER: str,
+                  HEADER_LINE_HEAD: str,
+                  X_NAME: str,
+                  Y_NAME: str,
+                  Y_MULTIPLE: float) -> None:
+
     plt.figure(figsize=(8, 6))
 
     for file_name, i_legend in zip(FILE_NAME_LIST, LEGEND_LIST):
