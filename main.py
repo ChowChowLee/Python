@@ -1,18 +1,16 @@
-import numpy as np
-import pandas
+import uvicorn
+from fastapi import FastAPI
 
 
+app = FastAPI()
 
-def greeting(name: str) -> str:
-    print(name + " how are you")
-
-def main() -> None:
-
-    print("Hello")
-    greeting("Jack")
+@app.get('/')
+def root():
+    return 'This is my first FastAPI!'
 
 
 
 
 if __name__ == '__main__':
-    main()
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+

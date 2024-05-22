@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from typing import Optional, Union
 
-DATA_FOLDER = ("C://Users//Lee//PycharmProjects//pythonProjectAlpacaBaby//Python//XRD//")
+DATA_FOLDER = ("C://Users//Lee./.XR./TPD//")
 HEADER_LINE_HEAD = None
 
 # Set your parameter
